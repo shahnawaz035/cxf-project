@@ -1,5 +1,6 @@
 package com.shah.webservice.cxf.cxfproject.config;
 
+import com.shah.webservice.cxf.cxfproject.CustomerOrdersImpl;
 import com.shah.webservice.cxf.cxfproject.HelloWs;
 import jakarta.xml.ws.Endpoint;
 import org.apache.cxf.Bus;
@@ -18,8 +19,8 @@ public class WebServiceConfig {
 
     @Bean
     public Endpoint endpoint(){
-        Endpoint endpoint = new EndpointImpl(bus, new HelloWs());
-        endpoint.publish("/hello");
+        Endpoint endpoint = new EndpointImpl(bus, new CustomerOrdersImpl());
+        endpoint.publish("/customerordersservice");
         return endpoint;
     }
 }
